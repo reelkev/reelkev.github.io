@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kevin Priestley - Australian Actor based in Melbourne">
+  <title>Kevin Priestley | Actor</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;700;700i&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    strong {
+    font-weight: 700 !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+    /* Fix for bold text on iOS Safari */
+strong,
+b,
+font-weight-bold,
+.markdown strong {
+    font-weight: 700 !important;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Lora', Georgia, serif !important;
+}
+
+/* Extra force for Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+    strong,
+    b {
+        font-weight: 900 !important;   /* Try heavier weight */
+    }
+}
+    
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f8f8f8;
+      overflow-x: hidden;
+      font-family: 'Lora', Georgia, serif;
+      color: #2d2d2d;
+      line-height: 1.6;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    img {
+      border: 2px solid #2d2d2d;
+      border-radius: 4px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Name */
+    .name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      padding: 2rem 1rem 1rem;
+      width: 100%;
+    }
+
+    .first-name {
+      font-size: 7rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      transform: scaleX(0.98);
+      text-transform: uppercase;
+      line-height: 1;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .last-name {
+      font-size: 5rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transform: scaleX(1.02);
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: #4a4a4a;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .first-name:hover, .last-name:hover {
+      transform: scaleX(1);
+      color: #d4af37;
+    }
+
+    /* Resume Content */
+    .resume {
+      width: 100%;
+      max-width: 900px;
+      padding: 1rem 1.5rem 3rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2d2d2d;
+      margin: 2.5rem 0 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .resume ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .resume li {
+      margin-bottom: 0.6rem;
+      word-break: break-word;
+    }
+
+    .resume li strong {
+      font-weight: 700;
+      color: #2d2d2d;
+    }
+
+    /* Video */
+    .video-section iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 8px;
+      background-color: #1A1A1A;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Vimeo Content */
+    .reeldiv {
+      width: 100%;
+      padding: 3rem 1rem 0rem;
+    }
+
+    /* Old Credits Accordion */
+    .old-credits {
+      margin: 1.5rem 0;
+    }
+
+    .old-credits summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .old-credits ul {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      margin-top: 0.5rem;
+    }
+
+    .old-credits[open] ul {
+      max-height: 1200px;
+    }
+
+    .coming-soon {
+      color: #777;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    /* Social Links */
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 640px) {
+      .social-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .first-name { font-size: 4.8rem; }
+      .last-name { font-size: 3.4rem; }
+      .section-title { font-size: 1.6rem; }
+      .reeldiv { width: 90%; padding: 3rem 1rem 0rem;}
+    }
+
+    @media (max-width: 360px) {
+      .first-name { font-size: 3.8rem; }
+      .last-name { font-size: 2.8rem; }
+      .reeldiv { width: 90%; padding: 3rem 1rem 0rem;}
+    }
+
+    @media (min-width: 768px) {
+      .first-name { font-size: 8.5rem; }
+      .last-name { font-size: 6rem; }
+      .section-title { font-size: 2.4rem; }
+      .reeldiv { width: 80%; padding: 3rem 1rem 0rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Name -->
+  <div class="name">
+    <span class="first-name">Kevin</span>
+    <span class="last-name">Priestley</span>
+  </div>
+
+    <!-- Reel -->
+<div class="reeldiv">
+    <section id="reel" class="video-section">
+      <iframe src="https://player.vimeo.com/video/1156693106" 
+              title="Kevin Priestley Acting Reel"
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowfullscreen></iframe>
+    </section>
+</div>
+
+  <div class="resume">
+
+
+    <!-- Feature Films -->
+    <h2 class="section-title">Feature Films</h2>
+    <ul>
+      <li>2025 <strong>CCTV Nasty</strong>, Rat, S. Karner</li>
+      <li>2017 <strong>The Color of Darkness</strong>, Jack, GK Makwana</li>
+    </ul>
+
+    <div class="coming-soon">
+      <strong>Coming Soon:</strong><br>
+      2026 <strong>Dirty Heist</strong>, Clutch, New Realm Pictures<br>
+      2026 <strong>Creatures Of The Night</strong>, Officer Brennan, Sol Tjapalyi<br>
+      2027 <strong>Bells of Mercy</strong>, Skuld, New Realm Pictures
+    </div>
+
+    <!-- Short Films -->
+    <h2 class="section-title">Short Films</h2>
+    <ul>
+      <li>2025 <strong>Aaron's War</strong>, Officer Brennan, Sol Tjapalyi</li>
+      <li>2024 <strong>When Lost Becomes Found</strong>, Dr. Michael, A. Hosemans</li>
+      <li>2023 <strong>Night Party</strong>, Ray, Reo</li>
+      <li>2022 <strong>Simon Says</strong>, George, Sean Smith</li>
+      <li>2021 <strong>Mister Mister</strong>, Matt, JMC Academy</li>
+      <li>2021 <strong>Kitab ko Panama</strong>, Pariscano, Niru Tripathi</li>
+      <li>2020 <strong>The Greatest Detective</strong>, Walter Huberis, Jason Vu</li>
+      <li>2020 <strong>These Two Hands</strong>, Fred, Sean Dobra</li>
+    </ul>
+
+    <details class="old-credits">
+      <summary>See More Credits</summary>
+      <ul>
+        <li>2019 <strong>Endless Love</strong>, Dr. Michael, Sean Smith</li>
+        <li>2019 <strong>Crime Doesn’t Pay</strong>, Wheels, JMC Academy</li>
+        <li>2019 <strong>Chanteuses Of Woe</strong>, Technician, Adam el Horri</li>
+        <li>2019 <strong>The Number</strong>, Policeman, RMIT</li>
+        <li>2017 <strong>Surprise Horror</strong>, Killer, RMIT</li>
+        <li>2015 <strong>Pedal</strong>, Paramedic, Gareth Calverley</li>
+        <li>2015 <strong>Zombie</strong>, RMIT, Nick Patrick Lee</li>
+        <li>2015 <strong>Hero of the Eternity Stone</strong>, Biker</li>
+        <li>2015 <strong>Make... Or Break</strong>, Club Photographer, Thomas Petrakos</li>
+        <li>2014 <strong>Boat People</strong>, Sketch, 5MA Productions</li>
+      </ul>
+    </details>
+
+    <!-- Television -->
+    <h2 class="section-title">Television &amp; Commercials</h2>
+    <ul>
+      <li>2025 <strong>Movember</strong>, Lead, Hamish Macgregor</li>
+      <li>2022 <strong>La Brea (S2)</strong>, Warrior, LAB Productions</li>
+      <li>2016 <strong>Shiseido UNO</strong>, Passport Officer, Tokyo</li>
+      <li>2015 <strong>Gallipoli Raise a Glass</strong>, Whistler, Victoria Bitter</li>
+      <li>2014 <strong>Wentworth</strong>, Assistant Nurse, Kevin Carlin</li>
+      <li>2014 <strong>Peroni Commercial</strong>, Lead Patron, Carlton Brewhouse</li>
+    </ul>
+
+    <!-- Training -->
+    <h2 class="section-title">Training</h2>
+    <ul>
+      <li><strong>Uta Hagen</strong>, Howard Fine, Week 60, 2021</li>
+      <li><strong>Self-Tapes</strong>, Howard Fine &amp; Marilyn McIntyre, 2021</li>
+      <li><strong>Vocal Production</strong>, Stephen Costan, 2019–2021</li>
+      <li><strong>Stella Adler School of Acting</strong>, LA Short Course, 2020</li>
+      <li><strong>Melbourne Actors Lab</strong>, Stella Adler / Lee Strasberg, 2013–2020</li>
+      <li><strong>NIDA</strong>, Acting Techniques Short Course, 2019</li>
+    </ul>
+
+    <!-- Biography -->
+    <section id="bio">
+      <img src="images/actor.kevin.priestley.JHP03380-web.jpg" 
+           alt="Kevin Priestley - Actor Portrait" 
+           width="800" height="600" loading="lazy">
+
+      <h2 class="section-title">Biography</h2>
+      <p><strong>Ethnicity:</strong> British Australian<br>
+         <strong>Languages:</strong> English<br>
+         <strong>Accents:</strong> Australian, American<br>
+         <strong>Skills:</strong> Bodybuilding, Boxing, Nursing, Australian Army</p>
+
+      <p>Kevin Priestley, a British-Australian actor, was born and raised in north-east Tasmania and now resides in Melbourne. Growing up in a creative environment influenced by artists and the Rainbow Family, he developed a deep appreciation for storytelling. He served briefly in the Australian Army and worked as a Registered Nurse while pursuing his acting career.</p>
+    </section>
+
+  </div>
+
+  <!-- Contact -->
+  <section class="bg-[#f5f5f5] py-16 w-full">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold tracking-tight mb-3 text-[#3a3632]">LET'S WORK TOGETHER</h2>
+      <p class="text-[#5c564f] mb-10">For casting enquiries and professional opportunities.</p>
+
+      <div class="social-grid">
+        <a href="https://www.imdb.com/name/nm6674804/" target="_blank" rel="noopener" 
+           class="flex items-center justify-center gap-x-3 px-6 py-4 bg-[#ccbc9d] hover:bg-[#b38a4f] text-black text-lg font-semibold rounded-md border-2 border-[#2d2d2d] transition-all">
+          <i class="fa-brands fa-imdb text-2xl"></i>
+          <span>IMDb Profile</span>
+        </a>
+
+        <a href="http://www.starnow.com/kevinpriestley" target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-x-3 px-6 py-4 bg-[#93af9c] hover:bg-[#4a7559] text-black text-lg font-semibold rounded-md border-2 border-[#2d2d2d] transition-all">
+          <i class="fa-solid fa-star text-2xl"></i>
+          <span>Starnow Profile</span>
+        </a>
+
+        <a href="https://app.castingnetworks.com/talent/public-profile/9fdf8818-b30d-11eb-9be1-211ffe9bbdc4" target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-x-3 px-6 py-4 bg-[#93acbc] hover:bg-[#3a6885] text-black text-lg font-semibold rounded-md border-2 border-[#2d2d2d] transition-all">
+          <i class="fa-solid fa-diamond text-2xl"></i>
+          <span>Casting Networks</span>
+        </a>
+
+        <a href="https://instagram.com/reelkevin" target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-x-3 px-6 py-4 bg-[#ad8383] hover:bg-[#9e4a4a] text-black text-lg font-semibold rounded-md border-2 border-[#2d2d2d] transition-all">
+          <i class="fa-brands fa-instagram text-2xl"></i>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-8 border-t border-[#e5e5e5] w-full text-center text-sm text-[#8a8780]">
+    <p>&copy; 2026 Kevin Priestley</p>
+  </footer>
+
+</body>
+</html>
