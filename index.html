@@ -23,6 +23,24 @@
     font-weight: 700 !important;
     -webkit-font-smoothing: antialiased;
 }
+
+    /* Fix for bold text on iOS Safari */
+strong,
+b,
+font-weight-bold,
+.markdown strong {
+    font-weight: 700 !important;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Lora', Georgia, serif !important;
+}
+
+/* Extra force for Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+    strong,
+    b {
+        font-weight: 900 !important;   /* Try heavier weight */
+    }
+}
     
     body {
       margin: 0;
