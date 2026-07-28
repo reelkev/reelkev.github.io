@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Priestley | Actor</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #d6cfbf;
+      color: #1c1814;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      line-height: 1.45;
+      padding: 28px 14px 48px;
+      min-height: 100vh;
+    }
+
+    .paper {
+      max-width: 860px;
+      margin: 0 auto;
+      background-color: #f2ebdc;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+      border: 1px solid #a89f8d;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+      padding: 22px 28px 34px;
+      position: relative;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(28,24,20,0.35);
+      pointer-events: none;
+    }
+
+    .top-rule {
+      border-top: 4px solid #1c1814;
+      border-bottom: 1px solid #1c1814;
+      height: 7px;
+      margin-bottom: 8px;
+    }
+
+    .masthead { text-align: center; margin-bottom: 6px; }
+
+    .masthead .paper-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 2.45rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .masthead .motto {
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #333;
+      margin-top: 6px;
+    }
+
+    .price-line {
+      text-align: center;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 6px 0 2px;
+      color: #444;
+    }
+
+    .issue-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #1c1814;
+      border-bottom: 3px double #1c1814;
+      padding: 6px 0;
+      margin: 8px 0 14px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.95rem;
+      line-height: 1.12;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .subhead {
+      text-align: center;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .posted {
+      text-align: center;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #c9c0ae;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 18px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #c9c0ae;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+      border: 1px solid #a89f8d;
+      filter: grayscale(10%);
+    }
+
+    .hero-caption {
+      font-size: 0.68rem;
+      color: #555;
+      margin-top: 4px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .lead p {
+      margin-bottom: 0.75em;
+      font-size: 0.93rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .lead p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      float: left;
+      line-height: 0.75;
+      margin: 4px 7px 0 0;
+      font-weight: 700;
+    }
+
+    .ornament {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 0.85rem;
+      letter-spacing: 7px;
+      color: #666;
+    }
+
+    .section {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #c9c0ae;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #1c1814;
+      margin-bottom: 8px;
+      padding-bottom: 3px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section-note {
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #555;
+    }
+
+    .credits {
+      list-style: none;
+      columns: 2;
+      column-gap: 20px;
+    }
+
+    .credits li {
+      break-inside: avoid;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px dotted #d0c8b8;
+      font-size: 0.86rem;
+    }
+
+    .year { font-weight: 700; margin-right: 4px; }
+
+    .notice {
+      border: 1px solid #1c1814;
+      padding: 10px 12px;
+      margin-top: 6px;
+      background: rgba(0,0,0,0.02);
+    }
+
+    .notice h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      text-align: center;
+    }
+
+    .notice p {
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .notice a {
+      color: #1c1814;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .notice a:hover { text-decoration: underline; }
+
+    .showreel-box {
+      border: 1px solid #1c1814;
+      padding: 12px;
+      background: rgba(0,0,0,0.015);
+    }
+
+    .showreel-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .showreel-box .intro {
+      text-align: center;
+      font-size: 0.84rem;
+      font-style: italic;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .showreel-note {
+      margin-top: 7px;
+      font-size: 0.72rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #555;
+    }
+
+    .social-box {
+      border: 1px solid #1c1814;
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.015);
+      text-align: center;
+    }
+
+    .social-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .social-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 18px;
+      font-size: 0.86rem;
+    }
+
+    .social-links a {
+      color: #1c1814;
+      text-decoration: none;
+      border-bottom: 1px dotted #1c1814;
+      padding-bottom: 1px;
+    }
+
+    .social-links a:hover {
+      border-bottom-style: solid;
+    }
+
+    .social-note {
+      margin-top: 8px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #555;
+    }
+
+    .small-item {
+      font-size: 0.82rem;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dotted #d0c8b8;
+    }
+
+    .colophon {
+      margin-top: 18px;
+      padding-top: 8px;
+      border-top: 3px double #1c1814;
+      text-align: center;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 700px) {
+      .paper { padding: 16px 14px 24px; }
+      .masthead .paper-name { font-size: 1.75rem; }
+      .headline { font-size: 1.5rem; }
+      .hero { grid-template-columns: 1fr; }
+      .credits { columns: 1; }
+      .issue-line { flex-direction: column; gap: 2px; text-align: center; }
+      .paper::before { inset: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+
+    <div class="top-rule"></div>
+
+    <header class="masthead">
+      <div class="paper-name">Casting Official Paper</div>
+      <div class="motto">Do the work. Turn up. Don’t let people down.</div>
+    </header>
+
+    <div class="price-line">Price: One Shilling &nbsp;|&nbsp; Published for the Profession</div>
+
+    <div class="issue-line">
+      <span>No. 42</span>
+      
+      <span>Tuesday, July 28, 2026</span>
+    </div>
+
+    <h1 class="headline">Kevin Priestley, Actor</h1>
+    <p class="subhead">A British-Australian performer of stage and screen practice</p>
+    <div class="posted"> &nbsp;•&nbsp;  &nbsp;&nbsp; </div>
+
+    <div class="hero">
+      <div>
+        <img src="https://kevinpriestley.com/images/actor.kevin.priestley.JHP03380-web.jpg" alt="Kevin Priestley">
+        <div class="hero-caption">Mr. Priestley, of London</div>
+      </div>
+      <div class="lead">
+        <p>
+          From north-east Tasmania to the working rooms of Melbourne, and latterly to London, Kevin Priestley has followed a steady course toward performance. Raised among artists and itinerant makers, he took early to stories, then to the discipline of the body and the voice.
+        </p>
+        <p>
+          He served briefly in the Australian Army and later practised as a Registered Nurse. These seasons, though apart from the stage, left their mark: a practical bearing, and a habit of attention.
+        </p>
+        <p>
+          His present work spans feature films, short pictures, television, and commercial employment, with several engagements announced for the coming seasons.
+        </p>
+      </div>
+    </div>
+
+    <div class="ornament">❖ &nbsp; ❖ &nbsp; ❖</div>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Feature Pictures</h2>
+        <span class="section-note">Recent &amp; Forthcoming</span>
+      </div>
+      <ul class="credits">
+        <li><span class="year">2027</span> Bells of Mercy — Skuld (New Realm Pictures)</li>
+        <li><span class="year">2026</span> Creatures Of The Night — Officer Brennan (Sol Tjapalyi)</li>
+        <li><span class="year">2026</span> Dirty Heist — Clutch (New Realm Pictures)</li>
+        <li><span class="year">2025</span> CCTV Nasty — Rat (S. Karner)</li>
+        <li><span class="year">2017</span> The Color of Darkness — Jack (GK Makwana)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Short Pictures</h2>
+        <span class="section-note"></span>
+      </div>
+      <ul class="credits">
+        <li><span class="year">2025</span> Aaron's War — Officer Brennan (Sol Tjapalyi)</li>
+        <li><span class="year">2019</span> Endless Love — Dr. Michael (Sean Smith)</li>
+        <li><span class="year">2015</span> Pedal — Paramedic (Gareth Calverley)</li>
+        <li><span class="year">2014</span> Boat People — Sketch (5MA Productions)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Television &amp; Commerce</h2>
+        <span class="section-note"></span>
+      </div>
+      <ul class="credits">
+        <li><span class="year">2025</span> Movember — Lead (Hamish Macgregor)</li>
+        <li><span class="year">2022</span> La Brea (S2) — Warrior (LAB Productions)</li>
+        <li><span class="year">2014</span> Wentworth — Assistant Nurse (Kevin Carlin)</li>
+        <li><span class="year">2014</span> Peroni Commercial — Lead Patron (Carlton Brewhouse)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Training &amp; Discipline</h2>
+        <span class="section-note">Recorded Study</span>
+      </div>
+      <ul class="credits">
+        <li>Uta Hagen — Howard Fine (Week 60, 2021)</li>
+        <li>Self-Tapes — Howard Fine &amp; Marilyn McIntyre (2021)</li>
+        <li>Vocal Production — Stephen Costan (2019–2021)</li>
+        <li>Stella Adler School of Acting — LA Short Course (2020)</li>
+        <li>Melbourne Actors Lab — Stella Adler / Lee Strasberg (2013–2020)</li>
+        <li>NIDA — Acting Techniques Short Course (2019)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Particulars</h2>
+        <span class="section-note"></span>
+      </div>
+      <div class="small-item">
+        <strong>Ethnicity:</strong> British Australian &nbsp;|&nbsp;
+        <strong>Languages:</strong> English &nbsp;|&nbsp;
+        <strong>Accents:</strong> Australian, American<br>
+        <strong>Skills:</strong> Bodybuilding, Boxing, Nursing, Australian Army
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">&nbsp;</h2>
+        <span class="section-note"></span>
+      </div>
+      <div class="showreel-box">
+         <h3>An Exhibition of Moving Likenesses</h3>
+       
+
+        <div style="padding:56.25% 0 0 0;position:relative;">
+          <iframe
+src="https://player.vimeo.com/video/1156693106?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            title="Actor Showreel 2026">
+          </iframe>
+        </div>
+
+        <div class="showreel-note">To be viewed at convenience &nbsp;&nbsp; </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Social Notices</h2>
+        <span class="section-note"></span>
+      </div>
+      <div class="social-box">
+        
+        <ul class="social-links">
+          <li><a href="https://app.castingnetworks.com/talent/public-profile/9fdf8818-b30d-11eb-9be1-211ffe9bbdc4" target="_blank" rel="noopener">Casting Networks</a></li>
+          <li><a href="https://www.imdb.com/name/nm6674804/" target="_blank" rel="noopener">IMDb</a></li>
+          <li><a href="https://www.instagram.com/reelkevin" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.starnow.com/kevinpriestley" target="_blank" rel="noopener">Starnow</a></li>
+        </ul>
+        <div class="social-note">Visit these addresses as required</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h3>To Managers &amp; Casting Offices</h3>
+        <p>Enquiries regarding engagement may be directed to the undersigned.</p>
+        <p style="margin-top:5px"><a href="mailto:info@williamsmgt.com">info@williamsmgt.com</a></p>
+      </div>
+    </section>
+
+    <div class="colophon">
+      Printed for the notice of the profession<br>
+      London &nbsp;•&nbsp; This day, July 28, 2026 &nbsp;•&nbsp; One copy<br>
+      
+    </div>
+
+  </div>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+</body>
+</html>
